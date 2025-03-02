@@ -17,7 +17,7 @@ export default function Home() {
       <Features />
       <Projects />
       <SystemDesign />
-      {/* <InteractiveModel /> */}
+      <InteractiveModel />
       <Testimonials />
       <Contact />
       <Footer />
