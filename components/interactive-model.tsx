@@ -12,8 +12,10 @@ function Room() {
   const tvColor = new THREE.Color("#000000")
   const lightColor = new THREE.Color("#ffff00")
 
-  const pointLightRef = useRef()
-  useHelper(pointLightRef, THREE.PointLightHelper, 0.5, "yellow")
+  const pointLightRef = useRef<THREE.PointLight>(null)
+  if (pointLightRef.current) {
+    useHelper(pointLightRef as React.MutableRefObject<THREE.Object3D>, THREE.PointLightHelper, 0.5, "yellow")
+  }
 
   useFrame(({ clock }) => {
     if (pointLightRef.current) {
